@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Button xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/btnCategoryRow"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:layout_marginBottom="8dp"
+    android:background="@drawable/bg_settings_row"
+    android:backgroundTint="@null"
+    app:backgroundTint="@null"
+    android:fontFamily="sans-serif-medium"
+    android:gravity="start|center_vertical"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
+    android:textAllCaps="false"
+    android:textColor="@color/text_primary"
+    android:textSize="15sp" />

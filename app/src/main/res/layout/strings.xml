@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Budget Tracker</string>
+    <string name="balance">Balance</string>
+    <string name="remaining">Remaining</string>
+    <string name="subscriptions">Subscriptions</string>
+    <string name="expenses">Expenses</string>
+    <string name="add_subscription">Add Subscription</string>
+    <string name="add_expense">Add Expense</string>
+    <string name="items">Items</string>
+    <string name="enter_balance">Enter your balance</string>
+    <string name="expense_name">Expense name</string>
+    <string name="amount">Amount</string>
+    <string name="subscription">Subscription</string>
+    <string name="name">Name</string>
+    <string name="period">Period</string>
+    <string name="monthly">monthly</string>
+    <string name="yearly">yearly</string>
+    <string name="cancel">Cancel</string>
+    <string name="language">Language</string>
+    <string name="english">English</string>
+    <string name="russian">Русский</string>
+    <string name="german">Deutsch</string>
+</resources>

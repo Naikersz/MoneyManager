@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Бюджет Трекер</string>
+    <string name="balance">Баланс</string>
+    <string name="remaining">Остаток</string>
+    <string name="subscriptions">Подписки</string>
+    <string name="expenses">Расходы</string>
+    <string name="add_subscription">Добавить подписку</string>
+    <string name="add_expense">Добавить расход</string>
+    <string name="items">Элементы</string>
+    <string name="enter_balance">Введите ваш баланс</string>
+    <string name="expense_name">Название расхода</string>
+    <string name="amount">Сумма</string>
+    <string name="subscription">Подписка</string>
+    <string name="name">Название</string>
+    <string name="period">Период</string>
+    <string name="monthly">месячно</string>
+    <string name="yearly">годично</string>
+    <string name="cancel">Отмена</string>
+    <string name="language">Язык</string>
+    <string name="english">Английский</string>
+    <string name="russian">Русский</string>
+    <string name="german">Немецкий</string>
+</resources>

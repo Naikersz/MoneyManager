@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_card_primary"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/manage_categories"
+        android:textColor="@color/text_primary"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvEmptyCategories"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:text="@string/no_categories"
+        android:textColor="@color/text_secondary"
+        android:textSize="14sp"
+        android:visibility="gone" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/layoutCategoryList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btnCloseCategoryManager"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:background="@drawable/bg_button_light"
+            android:backgroundTint="@null"
+            app:backgroundTint="@null"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/cancel"
+            android:textAllCaps="false"
+            android:textColor="@color/button_text_dark" />
+
+        <Button
+            android:id="@+id/btnAddNewCategory"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_button_dark"
+            android:backgroundTint="@null"
+            app:backgroundTint="@null"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/add_category"
+            android:textAllCaps="false"
+            android:textColor="@color/button_text_light" />
+    </LinearLayout>
+
+</LinearLayout>

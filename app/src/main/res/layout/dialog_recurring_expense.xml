@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="false"
+    android:scrollbars="none">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_home_balance_card"
+        android:orientation="vertical"
+        android:padding="14dp">
+
+        <TextView
+            android:id="@+id/tvRecurringExpenseDialogTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/add_recurring_expense"
+            android:textColor="@color/text_primary"
+            android:textSize="19sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/etRecurringAmount"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_home_panel"
+            android:backgroundTint="@null"
+            android:gravity="center_vertical"
+            android:hint="0,00"
+            android:inputType="numberDecimal"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:textColor="@color/text_primary"
+            android:textColorHint="@color/text_hint"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:id="@+id/layoutQuickRecurringCategories"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" />
+        </HorizontalScrollView>
+
+        <Button
+            android:id="@+id/btnRecurringCategoryPicker"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_home_panel"
+            android:backgroundTint="@null"
+            android:gravity="start|center_vertical"
+            android:minHeight="0dp"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
+            android:text="@string/general_category"
+            android:textAllCaps="false"
+            android:textColor="@color/text_primary"
+            android:textSize="13sp"
+            app:backgroundTint="@null" />
+
+        <Spinner
+            android:id="@+id/spinnerRecurringCategory"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/bg_home_panel"
+            android:backgroundTint="@null"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:popupBackground="@drawable/bg_spinner_popup"
+            android:spinnerMode="dropdown"
+            android:visibility="gone" />
+
+        <EditText
+            android:id="@+id/etRecurringName"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_input_surface"
+            android:backgroundTint="@null"
+            android:gravity="center_vertical"
+            android:hint="@string/recurring_expense_name"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:textColor="@color/text_primary"
+            android:textColorHint="@color/text_hint" />
+
+        <Spinner
+            android:id="@+id/spinnerRecurringAccount"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_home_panel"
+            android:backgroundTint="@null"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:popupBackground="@drawable/bg_spinner_popup"
+            android:spinnerMode="dropdown" />
+
+        <Spinner
+            android:id="@+id/spinnerRecurringPeriod"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_home_panel"
+            android:backgroundTint="@null"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:popupBackground="@drawable/bg_spinner_popup"
+            android:spinnerMode="dropdown" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnRecurringToday"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_button_light"
+                android:backgroundTint="@null"
+                android:minHeight="0dp"
+                android:text="@string/date_today"
+                android:textAllCaps="false"
+                android:textColor="@color/button_text_dark"
+                android:textSize="12sp"
+                app:backgroundTint="@null" />
+
+            <Button
+                android:id="@+id/btnRecurringTomorrow"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_button_light"
+                android:backgroundTint="@null"
+                android:minHeight="0dp"
+                android:text="@string/date_tomorrow"
+                android:textAllCaps="false"
+                android:textColor="@color/button_text_dark"
+                android:textSize="12sp"
+                app:backgroundTint="@null" />
+
+            <Button
+                android:id="@+id/btnRecurringDate"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1.4"
+                android:background="@drawable/bg_home_panel"
+                android:backgroundTint="@null"
+                android:minHeight="0dp"
+                android:text="@string/select_start_date"
+                android:textAllCaps="false"
+                android:textColor="@color/text_primary"
+                android:textSize="12sp"
+                app:backgroundTint="@null" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnToggleRecurringDetails"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_bottom_nav_container"
+            android:backgroundTint="@null"
+            android:minHeight="0dp"
+            android:text="@string/more_details"
+            android:textAllCaps="false"
+            android:textColor="@color/text_secondary"
+            android:textSize="12sp"
+            app:backgroundTint="@null" />
+
+        <LinearLayout
+            android:id="@+id/layoutRecurringDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <EditText
+                android:id="@+id/etRecurringSubcategory"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_input_surface"
+                android:backgroundTint="@null"
+                android:gravity="center_vertical"
+                android:hint="@string/subcategory_hint"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:textColor="@color/text_primary"
+                android:textColorHint="@color/text_hint" />
+
+            <Button
+                android:id="@+id/btnChooseRecurringSubcategory"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_button_light"
+                android:text="@string/choose_subcategory"
+                android:textAllCaps="false"
+                android:textColor="@color/button_text_dark" />
+
+            <EditText
+                android:id="@+id/etRecurringTags"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_input_surface"
+                android:backgroundTint="@null"
+                android:gravity="center_vertical"
+                android:hint="@string/tags_hint"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:textColor="@color/text_primary"
+                android:textColorHint="@color/text_hint" />
+
+            <Button
+                android:id="@+id/btnChooseRecurringTags"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_button_light"
+                android:text="@string/choose_tags"
+                android:textAllCaps="false"
+                android:textColor="@color/button_text_dark" />
+
+            <CheckBox
+                android:id="@+id/cbRecurringReminder"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="8dp"
+                android:buttonTint="@color/tab_badge"
+                android:text="@string/payment_reminder_enabled"
+                android:textColor="@color/text_primary"
+                android:textSize="14sp" />
+
+            <Spinner
+                android:id="@+id/spinnerRecurringReminderDays"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_home_panel"
+                android:backgroundTint="@null"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:popupBackground="@drawable/bg_spinner_popup"
+                android:spinnerMode="dropdown" />
+
+            <CheckBox
+                android:id="@+id/cbRecurringFavorite"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="8dp"
+                android:buttonTint="@color/tab_badge"
+                android:text="@string/recurring_favorite"
+                android:textColor="@color/text_primary"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnCancelRecurringDialog"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_button_light"
+                android:backgroundTint="@null"
+                android:text="@string/cancel"
+                android:textAllCaps="false"
+                android:textColor="@color/button_text_dark"
+                app:backgroundTint="@null" />
+
+            <Button
+                android:id="@+id/btnDeleteRecurringDialog"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_button_light"
+                android:backgroundTint="@null"
+                android:text="@string/delete_entry"
+                android:textAllCaps="false"
+                android:textColor="@color/button_text_dark"
+                android:visibility="gone"
+                app:backgroundTint="@null" />
+
+            <Button
+                android:id="@+id/btnPrimaryRecurringDialog"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1.4"
+                android:background="@drawable/bg_button_dark"
+                android:backgroundTint="@null"
+                android:text="@string/add_recurring_expense"
+                android:textAllCaps="false"
+                android:textColor="@color/button_text_light"
+                app:backgroundTint="@null" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

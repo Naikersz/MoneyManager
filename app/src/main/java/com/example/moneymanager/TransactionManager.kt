@@ -10,6 +10,7 @@ class TransactionManager {
 
     val incomes      = mutableListOf<Income>()
     val subscriptions = mutableListOf<Subscription>()
+    val recurringExpenses = mutableListOf<RecurringExpense>()
     val expenses     = mutableListOf<Expense>()
 
     // ── Totals ────────────────────────────────────────────────────────────────
@@ -72,6 +73,9 @@ class TransactionManager {
         }
         subscriptions.forEachIndexed { i, sub ->
             add(Item(sub.name, sub.amount, sub.period, sub.nextChargeDate ?: "", ItemType.SUBSCRIPTION, i))
+        }
+        recurringExpenses.forEachIndexed { i, recurring ->
+            add(Item(recurring.name, -recurring.amount, recurring.category ?: "", recurring.startDate ?: "", ItemType.RECURRING_EXPENSE, i))
         }
         expenses.forEachIndexed { i, exp ->
             add(Item(exp.name, exp.amount, exp.category ?: "", exp.date, ItemType.EXPENSE, i))

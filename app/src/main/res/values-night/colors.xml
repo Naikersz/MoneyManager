@@ -2,6 +2,7 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="app_background_start">#FF05100C</color>
     <color name="app_background">#FF07110E</color>
     <color name="card_surface">#FF07110E</color>
     <color name="card_surface_alt">#FF101817</color>
@@ -44,8 +45,22 @@
     <color name="calendar_selected_fill">#2491FFD2</color>
     <color name="calendar_event_shadow">#45FFFFFF</color>
     <color name="calendar_event_shadow_fill">#FF07110E</color>
+    <color name="chart_tooltip_background">#CD0D1511</color>
     <color name="bottom_nav_surface">#00101817</color>
     <color name="bottom_nav_selected">#FF244C42</color>
     <color name="bottom_nav_selected_stroke">#00000000</color>
     <color name="divider_soft">#2BFFFFFF</color>
+    <color name="home_balance_card">#FF09100D</color>
+    <color name="home_panel">#FF101813</color>
+    <color name="home_panel_pressed">#FF1B2721</color>
+    <color name="home_mint">#FFA5E8C8</color>
+    <color name="home_yellow">#FFFFD98B</color>
+    <color name="home_pink">#FFF5C5CB</color>
+    <color name="home_blue">#FFC7DFF5</color>
+    <color name="home_dark_text">#FF07100B</color>
+    <color name="home_line">#24FFFFFF</color>
+    <color name="dashboard_card_start">#FF07100C</color>
+    <color name="dashboard_card_end">#FF101A15</color>
+    <color name="dashboard_panel_start">#FF0D1511</color>
+    <color name="dashboard_panel_end">#FF151F1A</color>
 </resources>

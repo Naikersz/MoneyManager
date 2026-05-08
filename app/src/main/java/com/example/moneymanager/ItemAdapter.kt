@@ -1,5 +1,6 @@
 package com.example.moneymanager
 
+import android.content.res.ColorStateList
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,7 +12,7 @@ import java.util.Locale
 class ItemAdapter(
     private val items: List<Item>,
     private val onItemLongClick: (Item) -> Unit = {},
-    private val amountFormatter: (Double) -> String = { defaultFormatSignedAmount(it) },
+    private val amountFormatter: (Item) -> String = { defaultFormatSignedAmount(it.amount) },
     private val itemMarkerFormatter: (ItemType) -> String = { defaultItemMarker(it) }
 ) : RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {
 
@@ -35,19 +36,27 @@ class ItemAdapter(
 
         fun bind(item: Item) {
             tvAvatar.text = itemMarkerFormatter(item.type)
-            tvAvatar.background = null
+            tvAvatar.backgroundTintList = ColorStateList.valueOf(
+                ContextCompat.getColor(itemView.context, getAvatarColor(item.type))
+            )
+            tvAvatar.setTextColor(ContextCompat.getColor(itemView.context, R.color.home_dark_text))
             tvName.text = item.name
             tvMeta.text = item.meta
             tvTrailing.text = item.trailing
-            tvAmount.text = amountFormatter(item.amount)
+            tvAmount.text = amountFormatter(item)
 
             val colorRes = when (item.type) {
                 ItemType.INCOME -> R.color.amount_positive
+                ItemType.TRANSFER -> R.color.balance_text
                 else -> R.color.amount_negative
             }
             tvAmount.setTextColor(ContextCompat.getColor(itemView.context, colorRes))
 
-            itemView.setOnClickListener(null)
+            itemView.isClickable = true
+            itemView.isFocusable = true
+            itemView.setOnClickListener {
+                onItemLongClick(item)
+            }
             itemView.setOnLongClickListener {
                 onItemLongClick(item)
                 true
@@ -60,7 +69,9 @@ class ItemAdapter(
             return when (type) {
                 ItemType.INCOME -> "+"
                 ItemType.SUBSCRIPTION -> "-"
+                ItemType.RECURRING_EXPENSE -> "-"
                 ItemType.EXPENSE -> "-"
+                ItemType.TRANSFER -> "↔"
             }
         }
 
@@ -70,6 +81,16 @@ class ItemAdapter(
                 String.format(Locale.getDefault(), "+%.2f", absValue)
             } else {
                 String.format(Locale.getDefault(), "-%.2f", absValue)
+            }
+        }
+
+        private fun getAvatarColor(type: ItemType): Int {
+            return when (type) {
+                ItemType.INCOME -> R.color.home_mint
+                ItemType.SUBSCRIPTION -> R.color.home_yellow
+                ItemType.RECURRING_EXPENSE -> R.color.home_yellow
+                ItemType.EXPENSE -> R.color.home_pink
+                ItemType.TRANSFER -> R.color.home_blue
             }
         }
     }

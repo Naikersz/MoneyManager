@@ -1,4 +1,4 @@
-package com.example.moneymanager
+package com.example.moneymanager.ui
 
 import android.content.res.ColorStateList
 import android.view.LayoutInflater
@@ -7,6 +7,9 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.example.moneymanager.Item
+import com.example.moneymanager.ItemType
+import com.example.moneymanager.R
 import java.util.Locale
 
 class ItemAdapter(
@@ -71,7 +74,7 @@ class ItemAdapter(
                 ItemType.SUBSCRIPTION -> "-"
                 ItemType.RECURRING_EXPENSE -> "-"
                 ItemType.EXPENSE -> "-"
-                ItemType.TRANSFER -> "↔"
+                ItemType.TRANSFER -> "\u2194"
             }
         }
 

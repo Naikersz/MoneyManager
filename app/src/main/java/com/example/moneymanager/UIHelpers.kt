@@ -11,6 +11,10 @@ object DialogHelper {
     }
 }
 
+fun Context.dpToPx(value: Int): Int {
+    return (value * resources.displayMetrics.density).toInt()
+}
+
 fun View.addPressAnimation() {
     setOnTouchListener { view, event ->
         when (event.actionMasked) {
